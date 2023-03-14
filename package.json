@@ -1,0 +1,56 @@
+{
+	"name": "@valtech-commerce/optimizely-config",
+	"version": "1.0.0",
+	"description": "Valtech_Commerce Optimizely configurations",
+	"definition": "",
+	"homepage": "https://github.com/valtech-commerce/optimizely-config",
+	"author": {
+		"name": "Valtech Canada inc.",
+		"url": "https://www.valtech.ca/"
+	},
+	"keywords": [
+		"eslintconfig",
+		"eslint-config",
+		"optimizely",
+		"prettierconfig",
+		"prettier-config",
+		"stylelintconfig",
+		"stylelint-config"
+	],
+	"license": "MIT",
+	"repository": {
+		"url": "git://github.com/valtech-commerce/optimizely-config.git",
+		"type": "git"
+	},
+	"bugs": {
+		"url": "https://github.com/valtech-commerce/optimizely-config/issues"
+	},
+	"engines": {
+		"node": ">= 16"
+	},
+  "main": "./src/config/eslint.js",
+	"exports": {
+		"./eslint": "./src/config/eslint.js",
+		"./prettier": "./src/config/prettier.js",
+		"./stylelint": "./src/config/stylelint.js"
+	},
+	"scripts": {
+		"test": "npm run lint",
+		"lint": "npm run lint:eslint && npm run lint:prettier",
+		"lint:prettier": "prettier --check .",
+		"lint:eslint": "eslint --report-unused-disable-directives .",
+		"fix": "npm run fix:prettier && npm run fix:eslint",
+		"fix:prettier": "prettier --write .",
+		"fix:eslint": "eslint --fix --ext .js .",
+		"script:fixtures": "node ./scripts/generate-fixtures.js"
+	},
+	"devDependencies": {
+    "sort-json": "^2.0.1"
+  },
+	"dependencies": {
+		"@valtech-commerce/eslint-config": "^4.0.0-rc.3",
+		"@valtech-commerce/fs": "^1.7.0",
+		"@valtech-commerce/prettier-config": "^1.1.0",
+		"@valtech-commerce/stylelint-config": "^3.2.0"
+	}
+}

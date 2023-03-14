@@ -1,0 +1,3 @@
+extends:
+  - "@valtech-commerce/stylelint-config/core"
+#rules:
